@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const app = express();
 
 const authRouter = require("./routes/authRouter");
+const postRouter = require("./routes/postRouter");
 
 app.use(cors()); // For cors policy
 app.use(helmet());
@@ -20,6 +21,7 @@ mongoose.connect(process.env.MONGO_URI).then(() => {
 });
 
 app.use("/api/auth", authRouter);
+app.use("/api/posts", postRouter);
 app.get("/", (req, res) => {
     res.json({ message: "Hello from server" });
 });

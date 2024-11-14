@@ -11,13 +11,13 @@ const postsSchems = mongoose.Schema({
         required: [true, "Description is required"],
         trim: true,
     },
-    userId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: [true, "User ID is required"]
-    }
+    // userId: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'User',
+    //     required: [true, "User ID is required"]
+    // }
 }, {
     timeStamp: true
 });
 
-module.export = mongoose.model("Posts", postsSchems);
+module.exports = mongoose.model("Posts", postsSchems);
